@@ -1,0 +1,58 @@
+**Build an Arithmetic Formatter Project**  
+Elementary school students usually arrange arithmetic problems vertically to make solving them easier. For example, "235 + 52" becomes:
+
+**Example Code**  
+```  
+  235  
++  52  
+-----  
+```
+
+Complete the function `arithmetic_arranger` that takes a list of strings representing arithmetic problems and returns the problems arranged vertically and side-by-side.  
+The function should optionally take a second argument. If the second argument is set to `True`, the answers should also be displayed.
+
+**Example**  
+Call to the function:  
+```python
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
+```
+Output:
+```
+   32      3801      45      123  
++ 698    -    2    + 43    +  49  
+-----    ------    ----    -----  
+```
+
+Call to the function with answers shown:
+```python
+arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
+```
+Output:
+```
+  32         1      9999      523  
++  8    - 3801    + 9999    -  49  
+----    ------    ------    -----  
+  40     -3800     19998      474  
+```
+_________________________________________
+
+**Rules**  
+The function will return the correct conversion if the provided problems are properly formatted. Otherwise, it will return an error message that is meaningful to the user.
+
+Situations that will return an error:  
+1. **Too many problems:** If more than five problems are provided, return:  
+   `Error: Too many problems.`  
+2. **Invalid operators:** Only `+` and `-` are accepted operators. If multiplication or division is used, return:  
+   `Error: Operator must be '+' or '-'.`  
+3. **Non-numeric characters:** If any number contains non-digit characters, return:  
+   `Error: Numbers must only contain digits.`  
+4. **Numbers too large:** Each number must be at most four digits long. Otherwise, return:  
+   `Error: Numbers cannot be more than four digits.`  
+
+If the user provides a valid format, the conversion must follow these rules:  
+- There must be exactly one space between the operator and the longer number. The operator will be on the same line as the second number, and both numbers must appear in the order provided (the first on top and the second below).  
+- The numbers must be right-aligned.  
+- There must be four spaces between each problem.  
+- Dashes lines should appear below each problem. The length of each line must cover the entire width of the problem.  
+
+**Note:** Open the browser console with F12 to see more detailed output of the tests.
